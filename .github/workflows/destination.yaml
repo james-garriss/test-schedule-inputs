@@ -28,5 +28,5 @@ jobs:
           Write-Host 'The boolean input is'
           Write-Host ${{ inputs.BooleanInput }}
           Write-Host 'The string input is'
-          Write-Host ${{ inputs.StringINput }}
+          Write-Host ${{ inputs.StringInput }}
         
