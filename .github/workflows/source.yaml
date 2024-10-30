@@ -29,6 +29,7 @@ jobs:
     steps:
       - name: Print Inputs
         run: |
+          Write-Host 'Inside Source!'
           Write-Host 'The boolean input is'
           Write-Host ${{ inputs.BooleanInput }}
           Write-Host 'The string input is'
