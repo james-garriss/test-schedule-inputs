@@ -1,0 +1,36 @@
+name: Source
+
+on:
+  schedule:
+    # Every 10 minutes
+    - cron: "*/10 * * * *"
+  workflow_dispatch:
+    inputs:
+      BooleanInput:
+        description: This is a boolean
+        type: boolen
+        required: true
+        default: false
+      StringInput:
+        description: This is a string
+        type: string
+        required: true
+        default: 'Hello, World!'
+
+permissions: read-all
+
+jobs:
+  first-job:
+    name: First Job
+    runs-on: windows-latest
+    defaults:
+      run:
+        shell: powershell
+    steps:
+      - name: Print Boolean
+        run: |
+          Write-Host 'The boolean input is'
+          Write-Host ${{ inputs.BooleanInput }}
+          Write-Host 'The string input is'
+          Write-Host ${{ inputs.StringINput }}
+    
