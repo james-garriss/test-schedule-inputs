@@ -27,7 +27,7 @@ jobs:
       run:
         shell: powershell
     steps:
-      - name: Print Boolean
+      - name: Print Inputs
         run: |
           Write-Host 'The boolean input is'
           Write-Host ${{ inputs.BooleanInput }}
