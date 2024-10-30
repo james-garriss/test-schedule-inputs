@@ -37,16 +37,9 @@ jobs:
   second-job:
     name: Second Job
     runs-on: windows-latest
-    defaults:
-      run:
-        shell: powershell
-    steps:
-      - name: Checkout Repo
-        uses: actions/checkout@v4
-      - name: Call Destination
-        uses: ./.github/workflows/destination.yaml
-        with:
-          BooleanInput: ${{ inputs.BooleanInput }}
-          StringInput: ${{ inputs.StringInput }}
+    uses: ./.github/workflows/destination.yaml
+      with:
+        BooleanInput: ${{ inputs.BooleanInput }}
+        StringInput: ${{ inputs.StringInput }}
     needs:
       - first-job
