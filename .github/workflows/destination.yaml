@@ -1,4 +1,4 @@
-Name: Destination
+name: Destination
 
 on:
   workflow_call:
