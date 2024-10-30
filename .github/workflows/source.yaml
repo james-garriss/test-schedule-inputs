@@ -40,7 +40,7 @@ jobs:
     uses: ./.github/workflows/destination.yaml
     with:
       # Set it to true if the input is missing
-      BooleanInput: ${{ !contains(inputs.BooleanInput, 'true') }}
+      BooleanInput: ${{ !contains(inputs.BooleanInput, 'false') }}
       StringInput: ${{ inputs.StringInput || 'this is a default string value' }}
     needs:
       - first-job
