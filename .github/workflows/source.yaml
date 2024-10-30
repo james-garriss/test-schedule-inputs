@@ -8,7 +8,7 @@ on:
     inputs:
       BooleanInput:
         description: This is a boolean
-        type: boolen
+        type: boolean
         required: true
         default: false
       StringInput:
