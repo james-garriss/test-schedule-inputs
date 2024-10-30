@@ -36,10 +36,9 @@ jobs:
           Write-Host ${{ inputs.StringINput }}
   second-job:
     name: Second Job
-    runs-on: windows-latest
     uses: ./.github/workflows/destination.yaml
-      with:
-        BooleanInput: ${{ inputs.BooleanInput }}
-        StringInput: ${{ inputs.StringInput }}
+    with:
+      BooleanInput: ${{ inputs.BooleanInput }}
+      StringInput: ${{ inputs.StringInput }}
     needs:
       - first-job
