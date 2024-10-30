@@ -38,7 +38,7 @@ jobs:
     name: Second Job
     uses: ./.github/workflows/destination.yaml
     with:
-      BooleanInput: ${{ !contains(inputs.BooleanInput, 'false') }}
+      BooleanInput: ${{ contains(inputs.BooleanInput, 'true') }}
       StringInput: ${{ inputs.StringInput || 'this is a default string value' }}
     needs:
       - first-job
