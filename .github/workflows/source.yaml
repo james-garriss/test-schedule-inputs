@@ -31,14 +31,14 @@ jobs:
         run: |
           Write-Host 'Inside Source!'
           Write-Host 'The boolean input is'
-          Write-Host ${{ inputs.BooleanInput }}
+          Write-Host ${{ !contains(inputs.BooleanInput, 'false') }}
           Write-Host 'The string input is'
-          Write-Host ${{ inputs.StringINput }}
+          Write-Host ${{ inputs.StringInput || 'this is a default string value' }}
   second-job:
     name: Second Job
     uses: ./.github/workflows/destination.yaml
     with:
       BooleanInput: ${{ !contains(inputs.BooleanInput, 'false') }}
-      StringInput: ${{ inputs.StringInput }}
+      StringInput: ${{ inputs.StringInput || 'this is a default string value' }}
     needs:
       - first-job
