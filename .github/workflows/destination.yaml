@@ -1,0 +1,32 @@
+Name: Destination
+
+on:
+  workflow_call:
+    inputs:
+      BooleanInput:
+        description: This is a boolean
+        type: boolean
+        required: true
+      StringInput:
+        description: This is a string
+        type: string
+        required: true
+
+permissions: read-all
+
+jobs:
+  third-job:
+    name: Third Job
+    runs-on: windows-latest
+    defaults:
+      run:
+        shell: powershell
+    steps:
+      - name: Print Inputs
+        run: |
+          Write-Host 'Inside Destination!'
+          Write-Host 'The boolean input is'
+          Write-Host ${{ inputs.BooleanInput }}
+          Write-Host 'The string input is'
+          Write-Host ${{ inputs.StringINput }}
+        
