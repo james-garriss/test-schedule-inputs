@@ -41,6 +41,8 @@ jobs:
       run:
         shell: powershell
     steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v4
       - name: Call Destination
         uses: ./.github/workflows/destination.yaml
         with:
